@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  prometheus_insight:
+    container_name: prometheus_insight
+    build: .
+    ports:
+      - "9208:9208"
+    volumes:
+      - "./config.json:/go/config.json"
+      - "/etc/ssl/certs:/etc/ssl/certs" # Needed for HTTPS calls
